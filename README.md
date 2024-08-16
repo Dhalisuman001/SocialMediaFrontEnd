@@ -1,74 +1,9 @@
-# Pages
+# Threads UI Clone Youtube Tutorial
 
---> Login
---> Register
---> Forget Password
---> Update Password
---> Email Verification
---> Email Update
---> Profile Update
---> Profile
+### Built With React and Chakra UI
 
---> Feed
---> Comment
+# [Tutorial](https://youtu.be/TW7wltm4gD8)
 
---> Backend comment count
---> Story add
---> Like and comment popup
---> Friends online
---> data function
---> comment & post model reconstruction (imp)
+# [App Demo](https://threads-clone-yt.vercel.app/)
 
-# Tasks
-
---> Account Actions
-
- -> Create Account  ✅
- -> Login ✅
- -> Update About ✅
- -> Update Password ✅
- -> Forget Password ✅
- -> Change Password ✅
- -> Profile Update ✅
- -> Email Verification 
- -> Deactivate Account ✅
- -> Delete Account ✅
-
---> Post Actions
-
- -> Create Post ✅
- -> Update Post
- -> Like Post
- -> Delete Post
-
---> Comment Actions
-
- -> Create Comment
- -> Update Comment
- -> Like Comment
- -> Delete Comment
-
---> Story Actions
-
- -> Create Stories
- -> Like Stories
- -> Delete Stories
-
---> Miscellaneous
- 
- -> Friends
- -> Show Followers, Following, Posts
- -> Search History
- -> About Us
- -> Privacy
- -> Notifications
- -> Terms & Conditions
-
-
----> in profile and in user LikedBy
-
-
---> Aryesh's To do
-
- -> try to make UpdatePassword component reusable
- -> Email Verification
+![Screenshot of App](https://i.ibb.co/bsJ6jf6/Screenshot-5.png)
