@@ -4,15 +4,15 @@ import react from "@vitejs/plugin-react";
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [react()],
-	server: {
-		port: 3000,
-		// Get rid of the CORS error
-		proxy: {
-			"/api": {
-				target: "https://social-media-backend-server-rexl.onrender.com",
-				changeOrigin: true,
-				secure: false,
-			},
-		},
-	},
+	// server: {
+	// 	port: 3000,
+	// 	// Get rid of the CORS error
+	// 	proxy: {
+	// 		"/api": {
+	// 			target: "https://social-media-backend-server-rexl.onrender.com",
+	// 			changeOrigin: true,
+	// 			secure: false,
+	// 		},
+	// 	},
+	// },
 });
