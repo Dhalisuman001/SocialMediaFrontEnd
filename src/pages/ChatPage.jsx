@@ -9,7 +9,6 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { conversationsAtom, selectedConversationAtom } from "../atoms/messagesAtom";
 import userAtom from "../atoms/userAtom";
 import { useSocket } from "../context/SocketContext";
-import { apiUrl } from "../constant/app.constant";
 
 const ChatPage = () => {
 	const [searchingUser, setSearchingUser] = useState(false);
@@ -44,7 +43,7 @@ const ChatPage = () => {
 	useEffect(() => {
 		const getConversations = async () => {
 			try {
-				const res = await fetch(`${apiUrl}/api/messages/conversations`);
+				const res = await fetch("/api/messages/conversations");
 				const data = await res.json();
 				if (data.error) {
 					showToast("Error", data.error, "error");
@@ -66,7 +65,7 @@ const ChatPage = () => {
 		e.preventDefault();
 		setSearchingUser(true);
 		try {
-			const res = await fetch(`${apiUrl}/api/users/profile/${searchText}`);
+			const res = await fetch(`/api/users/profile/${searchText}`);
 			const searchedUser = await res.json();
 			if (searchedUser.error) {
 				showToast("Error", searchedUser.error, "error");
