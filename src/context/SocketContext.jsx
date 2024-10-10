@@ -4,6 +4,7 @@ import io from "socket.io-client";
 import userAtom from "../atoms/userAtom";
 
 const SocketContext = createContext();
+const backendUrl = "https://social-media-backend-server-rexl.onrender.com" || "http://localhost:4000"; // Default to local URL if not set
 
 export const useSocket = () => {
 	return useContext(SocketContext);
@@ -15,11 +16,14 @@ export const SocketContextProvider = ({ children }) => {
 	const user = useRecoilValue(userAtom);
 
 	useEffect(() => {
-		const socket = io("/", {
+
+
+		const socket = io(backendUrl, {
 			query: {
 				userId: user?._id,
 			},
 		});
+
 
 		setSocket(socket);
 
