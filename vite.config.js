@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
+const backendUrl = process.env.VITE_BACKEND_URL || "http://localhost:3000";
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [react()],
@@ -9,7 +10,7 @@ export default defineConfig({
 		// Get rid of the CORS error
 		proxy: {
 			"/api": {
-				target: "https://social-media-backend-server-rexl.onrender.com",
+				target:backendUrl,
 				changeOrigin: true,
 				secure: false,
 			},
