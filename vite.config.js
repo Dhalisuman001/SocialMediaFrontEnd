@@ -1,19 +1,24 @@
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 
-const backendUrl = process.env.VITE_BACKEND_URL || "http://localhost:3000";
-// https://vitejs.dev/config/
-export default defineConfig({
-	plugins: [react()],
-	server: {
-		port: 3000,
-		// Get rid of the CORS error
-		proxy: {
-			"/api": {
-				target:backendUrl,
-				changeOrigin: true,
-				secure: false,
-			},
-		},
-	},
+export default defineConfig(({ mode }) => {
+  // Load environment variables based on the current mode (development or production)
+  const env = loadEnv(mode, process.cwd(), "");
+
+  // Access the backend URL from the loaded environment variables
+  const backendUrl = env.VITE_BACKEND_URL;
+
+  return {
+    plugins: [react()],
+    server: {
+      port: 3000,
+      proxy: {
+        "/api": {
+          target: backendUrl,
+          changeOrigin: true,
+          secure: false,
+        },
+      },
+    },
+  };
 });
